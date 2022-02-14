@@ -20,11 +20,9 @@
 //using VRage.Game.ObjectBuilders.Definitions;
 //using VRage.Scripting;
 //using VRageMath;
-//using IngameScript.TiCommons.Extensions;
-//using IngameScript.TiCommons.Util;
-//using IngameScript.TiCommons.Util.Atlang;
+//using TigerrosSE.SEToolkit.Extensions;
 
-//namespace IngameScript.TiCommons.IGCTi {
+//namespace TigerrosSE.SEToolkit.IGCTi {
 //	public static class IGCTi {
 //		#region Properties
 //		/// <summary>
@@ -48,7 +46,7 @@
 //		#region Methods
 //		/// <summary>
 //		/// Finds all occurences of <c>"[<paramref name="itemName"/>:(.*)]"</c>.
-//		/// Captures one group - <c>.*</c> (anything).
+//		/// Captures one group which can be anything.
 //		/// </summary>
 //		private static System.Text.RegularExpressions.Regex MessageRX(string itemName)
 //			=> new System.Text.RegularExpressions.Regex($@"\[{itemName}\s*:\s*(.*)\]");
@@ -86,7 +84,7 @@
 //		public static void SendBroadcastMessage(Message message) {
 //			var listen = IGC.RegisterBroadcastListener(message.Tags[0].EnumValue);
 //			var msg = listen.AcceptMessage();
-			
+
 //			IGC.SendBroadcastMessage(new AtBuilder(message.Tags[0].EnumValue).AddAttribute("#Ti#", true).ToString(), message.ToString());
 //		}
 

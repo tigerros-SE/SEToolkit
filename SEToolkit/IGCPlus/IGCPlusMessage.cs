@@ -20,33 +20,28 @@ using VRage.Game.ModAPI.Ingame.Utilities;
 using VRage.Game.ObjectBuilders.Definitions;
 using VRage.Scripting;
 using VRageMath;
-using IngameScript.TiCommons.Extensions;
-using IngameScript.TiCommons.Util;
+using TigerrosSE.SEToolkit.Extensions;
 
-namespace IngameScript.TiCommons.IGCTi {
+namespace TigerrosSE.SEToolkit.IGCPlus {
 	/// <summary>
 	/// A class for a message.
 	/// This will be sent by
-	/// <see cref="IGCTi.SendBroadcastMessage(Message)"/>
-	/// and then parsed by <see cref="IGCTi.Parse{TTag}(MyIGCMessage)"/>.
+	/// <see cref="IGCPlus.SendBroadcastMessage{TData}(Message{TData})"/>
+	/// and then parsed by <see cref="IGCPlus.Parse{TTag}(MyIGCMessage)"/>.
 	/// </summary>
-	public class Message {
-		public EnumClass[] Tags { get; }
-		public string Description { get; }
-		public object Data { get; }
+	public class IGCPlusMessage<TData> {
+		public IEnumerable<object> Tags { get; }
+		public TData Data { get; }
 
-		public Message(EnumClass[] tags, object data, string description) {
+		public IGCPlusMessage(IEnumerable<object> tags, TData data) {
 			Tags = tags;
 			Data = data;
-			Description = description;
 		}
 
 		public override string ToString() {
-			var tagString = string.Join("", Tags.Select((tag, i) => $"[Tag{i}:{tag.EnumValue}]"));
-			
-			return tagString +
-			$"[Data:{Data}]" +
-			$"[Description:{Description}]";
+			var tagString = string.Join(";", Tags);
+
+			return tagString + $"[Data:{Data}]";
 		}
 	}
 }

@@ -17,9 +17,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\StringX.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\TerminalBlockX.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextSurfaceX.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IGCTi\IGCTi.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IGCTi\Message.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Fern\Fern.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Fern\FernBuilder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IGCPlus\IGCPlus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IGCPlus\IGCTiOld.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IGCPlus\IGCPlusMessage.cs" />
   </ItemGroup>
 </Project>
